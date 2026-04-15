@@ -406,10 +406,10 @@ st.divider()
 st.subheader("🎯 Lini Produk Transvision")
 
 produk_info = [
-    ("Nusantara", "DTH", "Paket DTH premium dengan channel eksklusif untuk segmen menengah-atas."),
-    ("Satellite",  "DTH", "Layanan DTH berbasis satelit untuk wilayah dengan keterbatasan infrastruktur internet."),
+    ("Nusantara", "DTH", "Layanan DTH berbasis satelit untuk wilayah dengan keterbatasan infrastruktur internet."),
+    ("Satellite",  "DTH", "Paket DTH premium dengan channel eksklusif untuk segmen menengah-atas."),
     ("Seru",       "OTT", "Platform streaming OTT entry-level, konten lokal dan hiburan keluarga."),
-    ("2nd Gen",    "OTT", "OTT generasi terkini — bundel wajib dengan Seru sebagai paket lengkap."),
+    ("2nd Gen",    "OTT", "Android Box Google Certified, ubah TV biasa jadi Smart TV dengan fitur perintah suara dan 100+ Live TV."),
 ]
 
 cols = st.columns(4)
