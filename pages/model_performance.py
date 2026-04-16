@@ -10,7 +10,7 @@ import statsmodels.api as sm
 from utils.preprocessing import preprocessing_pipeline, get_training_data
 from components.sidebar import sidebar
 
-st.set_page_config(page_title="Model Performance", layout="wide", page_icon="🤖")
+st.set_page_config(page_title="Model Performance", layout="wide", page_icon="⚙️")
 sidebar()
 
 st.markdown("""
