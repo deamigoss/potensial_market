@@ -45,9 +45,12 @@ def sidebar():
         </div>
         """, unsafe_allow_html=True)
 
+        # Gunakan emoji yang dijamin render di semua OS/browser:
+        # ✅ Aman: 🏠 📊 📈 🔮 ⚙️ 🧠 📋 🎯
+        # ❌ Kadang bermasalah: 🤖 🗺️ (emoji baru, glyph tidak selalu ada)
         st.page_link("app.py",                     label="🏠  Home")
         st.page_link("pages/eda.py",               label="📊  Exploratory Data Analysis")
-        st.page_link("pages/model_performance.py", label="🤖  Model Performance")
+        st.page_link("pages/model_performance.py", label="⚙️  Model Performance")
         st.page_link("pages/prediction.py",        label="🔮  Prediction")
 
         st.markdown("<hr>", unsafe_allow_html=True)
@@ -62,7 +65,7 @@ def sidebar():
             <span style="color:#94a3b8;font-size:0.82rem;">Dataset: <b style="color:#e2e8f0;">2022–2025</b></span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <span>🤖</span>
+            <span>⚙️</span>
             <span style="color:#94a3b8;font-size:0.82rem;">Model: <b style="color:#e2e8f0;">Logistic Regression</b></span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
