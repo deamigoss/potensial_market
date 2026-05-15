@@ -68,17 +68,34 @@ FEATURE_BISNIS = {
 def backward_wald(X, y, threshold=0.05):
     X_const   = sm.add_constant(X)
     variables = list(X_const.columns)
+    
+    # Deteksi apakah datanya biner (2 kelas) atau multinomial (>2 kelas)
+    is_multinomial = len(y.unique()) > 2
+    
     while True:
-        mdl     = sm.Logit(y, X_const[variables]).fit(disp=0)
+        # Gunakan model yang tepat
+        if is_multinomial:
+            mdl = sm.MNLogit(y, X_const[variables]).fit(disp=0)
+        else:
+            mdl = sm.Logit(y, X_const[variables]).fit(disp=0)
+            
         pvalues = mdl.pvalues
-        max_p   = pvalues.max()
+        # Jika multinomial, p-values berbentuk matriks, kita ambil max dari setiap variabel
+        if is_multinomial:
+            max_p_series = pvalues.max(axis=1) 
+        else:
+            max_p_series = pvalues
+            
+        max_p = max_p_series.max()
+        
         if max_p > threshold:
-            remove_var = pvalues.idxmax()
+            remove_var = max_p_series.idxmax()
             if remove_var == "const":
                 break
             variables.remove(remove_var)
         else:
             break
+            
     return variables
 
 def build_model_pack(df_scope, df_train_full, vars_strategi, scaler_strategi, model_strategi, provinsi_name):
