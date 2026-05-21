@@ -81,8 +81,8 @@ def create_label_kategori(row):
 
 def create_label_dth(row):
     dth = str(row.get("DTH/ MASS","")).lower().strip()
-    if dth == "satellite" : return 0
-    if dth == "nusantara" : return 1
+    if dth == "satellite" : return 1
+    if dth == "nusantara" : return 0
     return None
 
 def create_label_ott(row):
